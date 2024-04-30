@@ -13,9 +13,13 @@ describe("katakana",
       assert.equals(1, vim.api.nvim_strwidth(target))
       assert.equals(1, vim.fn.strdisplaywidth(target))
     end)
-    it("parse_katakana", function()
+    it("full to half", function()
       local target = "アイウエオaかきくけこbカキクケコ"
       assert.equals("ｱｲｳｴｵaかきくけこbｶｷｸｹｺ", katakana.full_to_half(target))
+    end)
+    it("full to half dakuten", function()
+      local target = "ガイコク"
+      assert.equals("ガイコク", katakana.full_to_half(target))
     end)
     it("firstbyte", function()
       local target = "アイウエオ"
