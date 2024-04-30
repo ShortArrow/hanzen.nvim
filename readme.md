@@ -22,7 +22,7 @@ Default keymaps are nothing.
 ## Command
 
 |command|description|
-|:-:|:-:|
+|:- |:-:|
 |require("hanzen").command.hello()|print("Hello, I am Hanzen!")|
 |require("hanzen").command.reverse_text()| Rewrite text reversed |
 |require("hanzen").command.katakana.full_to_half()| Selected text full to half only katakana|
