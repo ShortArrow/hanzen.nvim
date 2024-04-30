@@ -29,5 +29,14 @@ describe("katakana",
       byte = string.byte(thirdbyte)
       assert.equals(0xA2, string.byte(thirdbyte))
     end)
+    it("match", function()
+      local dd = {
+        ["ア"] = "ｱ",
+      }
+      local match = dd["ア"]
+      assert.equals("ｱ", match)
+      match = dd["イ"]
+      assert.equals(nil, match)
+    end)
   end
 )
