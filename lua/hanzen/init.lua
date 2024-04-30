@@ -1,15 +1,17 @@
 local M = {}
 
-local reverse_text = require 'hanzen.command'.reverse_text
-local hello = require 'hanzen.command'.hello
+M.command = require 'hanzen.command'
 
 function M.setup()
   -- Add Excommands
   vim.api.nvim_create_user_command('HanzenReverse', function()
-    reverse_text()
+    M.command.reverse_text()
   end, { range = true })
   vim.api.nvim_create_user_command('HanzenInfo', function()
-    hello()
+    M.command.hello()
+  end, { range = true })
+  vim.api.nvim_create_user_command('HanzenKatakanaF2H', function()
+    M.command.katakana.full_to_half()
   end, { range = true })
 end
 

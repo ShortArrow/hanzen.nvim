@@ -20,7 +20,7 @@ function M.reverse_text()
 end
 
 ---Rewrite Zenkaku katakana to Hankaku katakana
-function M.full_to_half_katakana()
+function M.katakana.full_to_half()
   local start_row, start_col, end_row, end_col = feature.get_selected_range()
   local concat_text = feature.get_selected_text(start_row, start_col, end_row, end_col)
 
