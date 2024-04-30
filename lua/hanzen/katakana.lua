@@ -1,7 +1,7 @@
 local M = {}
 
 local zenkakuTarget = ""
-    .. "アイウエオ"
+    .. "アイウエオ" -- E3 82 A2
     .. "カキクケコ"
     .. "サシスセソ"
     .. "タチツテト"
@@ -12,16 +12,6 @@ local zenkakuTarget = ""
     .. "ラリルレロ"
     .. "ワヲン"
 
----Convert Zenkaku katakana to Hankaku katakana
----@param inputtext string target text
----@return string zenkaku_text
-function M.zenkana_to_hankana(inputtext)
-  local result, _ = inputtext:gsub("[ア-ン]", function(c)
-    return c .. ":"
-  end)
-  return result
-end
-
 function M.parse_katakana(input)
   local output = {}
   local i = 1
@@ -30,8 +20,7 @@ function M.parse_katakana(input)
   while i <= len do
     local char = input:sub(i, i)
     local byte = string.byte(char)
-    -- 特定のパターンを検出して処理
-    --アイウエオの場合
+    --アイウエオ
     if byte == 0xE3 then
       local next_char = input:sub(i + 1, i + 1)
       local next_byte = string.byte(next_char)
@@ -55,11 +44,7 @@ function M.parse_katakana(input)
           i = i + 3
         end
       end
-    end
-    -- ワオンの場合
-    if byte == 0xE3 then
-      local next_char = input:sub(i + 1, i + 1)
-      local next_byte = string.byte(next_char)
+      -- ワオン
       if next_byte == 0x83 then
         local next_next_char = input:sub(i + 2, i + 2)
         local next_next_byte = string.byte(next_next_char)
@@ -83,7 +68,7 @@ function M.parse_katakana(input)
         local next_next_char = input:sub(i + 2, i + 2)
         local next_next_byte = string.byte(next_next_char)
         if next_next_byte == 0xAC then
-          output[#output + 1] = "ｶ"
+          output[#output + 1] = "ｶﾞ"
           i = i + 3
         elseif next_next_byte == 0xAE then
           output[#output + 1] = "ｷ"
