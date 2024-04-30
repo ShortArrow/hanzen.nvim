@@ -14,8 +14,8 @@ describe("katakana",
       assert.equals(1, vim.fn.strdisplaywidth(target))
     end)
     it("parse_katakana", function()
-      local target = "アイウエオ"
-      assert.equals("ｱｲｳｴｵ", katakana.parse_katakana(target))
+      local target = "アイウエオaかきくけこbカキクケコ"
+      assert.equals("ｱｲｳｴｵaかきくけこbｶｷｸｹｺ", katakana.zenkaku_to_hankaku(target))
     end)
     it("firstbyte", function()
       local target = "アイウエオ"
