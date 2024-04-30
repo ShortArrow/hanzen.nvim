@@ -15,7 +15,7 @@ describe("katakana",
     end)
     it("parse_katakana", function()
       local target = "アイウエオaかきくけこbカキクケコ"
-      assert.equals("ｱｲｳｴｵaかきくけこbｶｷｸｹｺ", katakana.zenkaku_to_hankaku(target))
+      assert.equals("ｱｲｳｴｵaかきくけこbｶｷｸｹｺ", katakana.full_to_half(target))
     end)
     it("firstbyte", function()
       local target = "アイウエオ"

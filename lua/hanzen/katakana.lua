@@ -28,7 +28,7 @@ local full_to_half = {
   ["ン"] = "ﾝ"
 }
 
-function M.zenkaku_to_hankaku(input)
+function M.full_to_half(input)
   local parsed = utf8.string_to_table(input)
   local output = {}
   for _, char in ipairs(parsed) do
