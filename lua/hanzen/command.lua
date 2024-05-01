@@ -1,4 +1,6 @@
-local M = {}
+local M = {
+  katakana = {}
+}
 
 local feature = require 'hanzen.feature'
 local katakana = require 'hanzen.katakana'
