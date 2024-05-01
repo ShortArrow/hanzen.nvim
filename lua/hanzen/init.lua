@@ -13,6 +13,9 @@ function M.setup()
   vim.api.nvim_create_user_command('HanzenKatakanaF2H', function()
     M.command.katakana.full_to_half()
   end, { range = true })
+  vim.api.nvim_create_user_command('HanzenKatakanaH2F', function()
+    M.command.katakana.half_to_full()
+  end, { range = true })
 end
 
 return M

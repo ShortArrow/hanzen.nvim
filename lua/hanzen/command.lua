@@ -33,4 +33,16 @@ function M.katakana.full_to_half()
   vim.api.nvim_buf_set_text(0, start_row, start_col, end_row, end_col, vim.split(processed_text, "\n"))
 end
 
+---Rewrite Hankaku katakana to Zenkaku katakana
+function M.katakana.half_tofull()
+  local start_row, start_col, end_row, end_col = feature.get_selected_range()
+  local concat_text = feature.get_selected_text(start_row, start_col, end_row, end_col)
+
+  -- process text here
+  local processed_text = katakana.half_to_full(concat_text)
+
+  -- Rewrite text
+  vim.api.nvim_buf_set_text(0, start_row, start_col, end_row, end_col, vim.split(processed_text, "\n"))
+end
+
 return M
