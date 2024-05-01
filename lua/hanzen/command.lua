@@ -34,7 +34,7 @@ function M.katakana.full_to_half()
 end
 
 ---Rewrite Hankaku katakana to Zenkaku katakana
-function M.katakana.half_tofull()
+function M.katakana.half_to_full()
   local start_row, start_col, end_row, end_col = feature.get_selected_range()
   local concat_text = feature.get_selected_text(start_row, start_col, end_row, end_col)
 
