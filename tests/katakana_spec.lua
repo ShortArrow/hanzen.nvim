@@ -1,6 +1,10 @@
 local katakana = require "hanzen.katakana"
 describe("katakana",
   function()
+    it("not nil",  function()
+      local target = nil
+      assert.equals(true, not target)
+    end)
     it("zenkaku len", function()
       local target = "ア"
       assert.equals(3, string.len(target))
@@ -19,7 +23,11 @@ describe("katakana",
     end)
     it("full to half dakuten", function()
       local target = "ガイコク"
-      assert.equals("ガイコク", katakana.full_to_half(target))
+      assert.equals("ｶﾞｲｺｸ", katakana.full_to_half(target))
+    end)
+    it("half to full dakuten", function()
+      local target = "ｶﾞｲｺｸ"
+      assert.equals("ガイコク", katakana.half_to_full(target))
     end)
     it("firstbyte", function()
       local target = "アイウエオ"
