@@ -37,3 +37,4 @@ And, "half width charactor" called "Hankaku Moji", "半角文字".
 
 - number
 - alphabet
+- support whole line selection
