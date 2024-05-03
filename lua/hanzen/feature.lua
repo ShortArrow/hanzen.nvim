@@ -14,6 +14,35 @@ function M.get_selected_range()
   return start_row, start_col, end_row, end_col
 end
 
+---Get byte at (row, col) position
+---@param row number row position
+---@param col number column position
+function M.get_byte_at_position(row, col)
+  -- Get the line at the specified row
+  local line = vim.api.nvim_buf_get_lines(0, row, row + 1, false)[1]
+  -- Get the byte at the specified column
+  local byte = string.byte(line, col)
+  return byte
+end
+
+---Get byte length from first one byte of charactor
+---@param first_byte number first byte of selected target
+function M.get_byte_length_from_firstone(first_byte)
+  if first_byte > 0x7F then
+    if first_byte >= 0xC0 and first_byte <= 0xDF then     -- 0b110xxxxx
+      return 2
+    elseif first_byte >= 0xE0 and first_byte <= 0xEF then -- 0b1110xxxx
+      return 3
+    elseif first_byte >= 0xF0 and first_byte <= 0xF7 then -- 0b11110xxx
+      return 4
+    else
+      error("Invalid Byte: " .. first_byte)
+    end
+  else
+    return 1
+  end
+end
+
 ---Get user selected text
 ---@param start_row number selected text start row
 ---@param start_col number selected text start col
