@@ -21,11 +21,14 @@ Default keymaps are nothing.
 
 ## Command
 
-|command|description|
-|:- |:-:|
-|require("hanzen").command.hello()|print("Hello, I am Hanzen!")|
-|require("hanzen").command.reverse_text()| Rewrite text reversed |
-|require("hanzen").command.katakana.full_to_half()| Selected text full to half only katakana|
+<!-- markdownlint-disable MD013 -->
+|ExCommand|command|description|
+|:- |:- |:-:|
+|HanzenInfo|require("hanzen").command.hello()|print("Hello, I am Hanzen!")|
+|HanzenReverse|require("hanzen").command.reverse_text()| Rewrite text reversed |
+|HanzenKatakanaF2H|require("hanzen").command.katakana.full_to_half()| Selected text full to half only katakana|
+|HanzenKatakanaH2F|require("hanzen").command.katakana.half_to_full()| Selected text half to full only katakana|
+<!-- markdownlint-enable MD013 -->
 
 ## About
 
