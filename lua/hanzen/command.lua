@@ -21,6 +21,8 @@ function M.reverse_text()
 end
 
 ---Get Full to Half Processor function from target kind name
+---@param option string
+---@return function | nil
 local function get_full_to_half_processor(option)
   if option == 'katakana' then
     return katakana.full_to_half
@@ -32,6 +34,8 @@ local function get_full_to_half_processor(option)
 end
 
 ---Get Half to Full Processor function from target kind name
+---@param option string
+---@return function | nil
 local function get_half_to_full_processor(option)
   if option == 'katakana' then
     return katakana.half_to_full
@@ -43,6 +47,7 @@ local function get_half_to_full_processor(option)
 end
 
 ---Rewrite Full length to Half length
+---@param option string
 function M.full_to_half(option)
   local start_row, start_col, end_row, end_col = feature.get_selected_range()
   local end_byte = feature.get_byte_at_position(end_row, end_col)
