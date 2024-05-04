@@ -68,6 +68,7 @@ function M.full_to_half(option)
 end
 
 ---Rewrite Half length to Full length
+---@param option string
 function M.half_to_full(option)
   local start_row, start_col, end_row, end_col = feature.get_selected_range()
   local end_byte = feature.get_byte_at_position(end_row, end_col)
