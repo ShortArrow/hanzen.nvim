@@ -5,7 +5,7 @@ M.command = require 'hanzen.command'
 local function complete_args(arg_lead, cmdline, cursor_pos)
   local _ = cmdline
   local _ = cursor_pos
-  local candidates = { 'hiragana', 'katakana', 'alphabet', 'number' }
+  local candidates = { 'hiragana', 'katakana', 'alphabet', 'number', 'all' }
   return vim.tbl_filter(function(item)
     return vim.startswith(item, arg_lead)
   end, candidates)
@@ -29,6 +29,8 @@ function M.setup()
       print('not implemented yet: ' .. target)
     elseif target == 'number' then
       print('not implemented yet: ' .. target)
+    elseif target == 'all' then
+      print('not implemented yet: ' .. target)
     else
       error('Invalid target: ' .. target)
     end
@@ -36,7 +38,7 @@ function M.setup()
     range = true,
     nargs = 1,
     complete = complete_args,
-    desc = 'Convert text between hiragana, katakana, alphabet, and number'
+    desc = 'Convert text between hiragana, katakana, alphabet, number and all'
   })
   vim.api.nvim_create_user_command('HanzenHalfToFull', function(options)
     local target = options.args
@@ -48,6 +50,8 @@ function M.setup()
       print('not implemented yet: ' .. target)
     elseif target == 'number' then
       print('not implemented yet: ' .. target)
+    elseif target == 'all' then
+      print('not implemented yet: ' .. target)
     else
       error('Invalid target: ' .. target)
     end
@@ -55,7 +59,7 @@ function M.setup()
     range = true,
     nargs = 1,
     complete = complete_args,
-    desc = 'Convert text between hiragana, katakana, alphabet, and number'
+    desc = 'Convert text between hiragana, katakana, alphabet, number and all'
   })
   vim.api.nvim_create_user_command('HanzenCurrentBuffer', function()
     print('not implemented yet')
