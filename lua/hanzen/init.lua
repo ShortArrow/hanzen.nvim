@@ -20,20 +20,7 @@ function M.setup()
     M.command.hello()
   end, { range = true })
   vim.api.nvim_create_user_command('HanzenFullToHalf', function(options)
-    local target = options.args
-    if target == 'hiragana' then
-      print('not implemented yet: ' .. target)
-    elseif target == 'katakana' then
-      M.command.katakana.full_to_half()
-    elseif target == 'alphabet' then
-      print('not implemented yet: ' .. target)
-    elseif target == 'number' then
-      print('not implemented yet: ' .. target)
-    elseif target == 'all' then
-      print('not implemented yet: ' .. target)
-    else
-      error('Invalid target: ' .. target)
-    end
+    M.command.full_to_half(options.args)
   end, {
     range = true,
     nargs = 1,
@@ -41,20 +28,7 @@ function M.setup()
     desc = 'Convert text between hiragana, katakana, alphabet, number and all'
   })
   vim.api.nvim_create_user_command('HanzenHalfToFull', function(options)
-    local target = options.args
-    if target == 'hiragana' then
-      print('not implemented yet: ' .. target)
-    elseif target == 'katakana' then
-      M.command.katakana.half_to_full()
-    elseif target == 'alphabet' then
-      print('not implemented yet: ' .. target)
-    elseif target == 'number' then
-      print('not implemented yet: ' .. target)
-    elseif target == 'all' then
-      print('not implemented yet: ' .. target)
-    else
-      error('Invalid target: ' .. target)
-    end
+    M.command.half_to_full(options.args)
   end, {
     range = true,
     nargs = 1,

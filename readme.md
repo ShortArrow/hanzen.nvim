@@ -36,6 +36,19 @@ Default keymaps are nothing.
 |HanzenHalfToFullBuffer|require("hanzen").command.half_to_full_buffer()| Selected buffer half to full||
 <!-- markdownlint-enable MD013 -->
 
+## Usage
+
+How to rewrite half styled text to full styled text in buffer.
+Example target text is `ｱｲｳｴｵ`.
+
+1. Select target text `ｱｲｳｴｵ` in Visual mode.
+1. Run ExCommand `HanzenHalfToFull katakana`
+
+In Lua, follow bellow.
+
+1. Select target text `ｱｲｳｴｵ` in Visual mode.
+1. Run ExCommand `lua require('hanzen').half_to_full('katakana')`
+
 ## About
 
 `Hanzen` is made from Japanese words.
