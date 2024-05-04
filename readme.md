@@ -30,8 +30,8 @@ Default keymaps are nothing.
 |:- |:- |:-:|:-:|
 |HanzenInfo|require("hanzen").command.hello()|print("Hello, I am Hanzen!")||
 |HanzenReverse|require("hanzen").command.reverse_text()| Rewrite text reversed ||
-|HanzenFullToHalf|require("hanzen").command.full_to_half(option)| Selected text full to half|['hiragana','katakana','alphabet', 'number', 'all']|
-|HanzenHalfToFull|require("hanzen").command.half_to_full(option)| Selected text half to full|['hiragana','katakana','alphabet', 'number', 'all']|
+|HanzenFullToHalf|require("hanzen").command.full_to_half(option)| Selected text full to half|['katakana','alphabet', 'number', 'all']|
+|HanzenHalfToFull|require("hanzen").command.half_to_full(option)| Selected text half to full|['katakana','alphabet', 'number', 'all']|
 |HanzenFullToHalfBuffer|require("hanzen").command.full_to_half_buffer()| Selected buffer full to half||
 |HanzenHalfToFullBuffer|require("hanzen").command.half_to_full_buffer()| Selected buffer half to full||
 <!-- markdownlint-enable MD013 -->

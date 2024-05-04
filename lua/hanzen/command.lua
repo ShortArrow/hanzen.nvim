@@ -21,9 +21,7 @@ end
 
 ---Get Full to Half Processor function from target kind name
 local function get_full_to_half_processor(option)
-  if option == 'hiragana' then
-    return nil -- not implemented yet
-  elseif option == 'katakana' then
+  if option == 'katakana' then
     return katakana.full_to_half
   elseif option == 'alphabet' then
     return nil -- not implemented yet
@@ -34,9 +32,7 @@ end
 
 ---Get Half to Full Processor function from target kind name
 local function get_half_to_full_processor(option)
-  if option == 'hiragana' then
-    return nil -- not implemented yet
-  elseif option == 'katakana' then
+  if option == 'katakana' then
     return katakana.half_to_full
   elseif option == 'alphabet' then
     return nil -- not implemented yet
