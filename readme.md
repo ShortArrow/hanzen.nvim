@@ -57,7 +57,6 @@ And, "half width charactor" called "Hankaku Moji", "半角文字".
 
 ## Roadmap
 
-- support number
-- support alphabet
 - support Korean alphabet, Hangul characters
 - support whole line selection
+- support whole buffer
