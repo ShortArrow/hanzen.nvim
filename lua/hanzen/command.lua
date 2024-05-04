@@ -3,6 +3,7 @@ local M = {}
 local feature = require 'hanzen.feature'
 local katakana = require 'hanzen.katakana'
 local number = require 'hanzen.number'
+local alphabet = require 'hanzen.alphabet'
 
 function M.hello()
   print("Hello, I am Hanzen!")
@@ -27,7 +28,7 @@ local function get_full_to_half_processor(option)
   if option == 'katakana' then
     return katakana.full_to_half
   elseif option == 'alphabet' then
-    return nil -- not implemented yet
+    return alphabet.full_to_half
   elseif option == 'number' then
     return number.full_to_half
   end
@@ -40,7 +41,7 @@ local function get_half_to_full_processor(option)
   if option == 'katakana' then
     return katakana.half_to_full
   elseif option == 'alphabet' then
-    return nil -- not implemented yet
+    return alphabet.half_to_full
   elseif option == 'number' then
     return number.half_to_full
   end
