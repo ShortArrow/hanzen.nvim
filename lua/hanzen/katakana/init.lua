@@ -4,6 +4,9 @@ local utf8 = require "hanzen.utf8"
 local full_to_half = require "hanzen.katakana.table.full_to_half"
 local half_to_full = require "hanzen.katakana.table.half_to_full"
 
+---Convert text Full to Half
+---@param input string
+---@return string
 function M.full_to_half(input)
   local parsed = utf8.string_to_table(input)
   local output = {}
@@ -18,6 +21,9 @@ function M.full_to_half(input)
   return table.concat(output)
 end
 
+---Convert single string Half to Full
+---@param input string
+---@return string
 local function half_to_full_single(input)
   local full_char = half_to_full[input]
   if not full_char then
@@ -26,6 +32,9 @@ local function half_to_full_single(input)
   return full_char
 end
 
+---Convert text Half to Full
+---@param input string
+---@return string
 function M.half_to_full(input)
   local parsed = utf8.string_to_table(input)
   local output = {}
