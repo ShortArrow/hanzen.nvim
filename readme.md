@@ -2,6 +2,10 @@
 
 This is Rewriter of between Full width charactor and Half width charactor.
 
+👷 🚧 WIP 🚧 👷
+
+***This Project is work in progress yet.***
+
 ## Install
 
 ### Lazy.nvim
