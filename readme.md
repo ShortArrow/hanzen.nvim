@@ -26,12 +26,14 @@ Default keymaps are nothing.
 ## Command
 
 <!-- markdownlint-disable MD013 -->
-|ExCommand|command|description|
-|:- |:- |:-:|
-|HanzenInfo|require("hanzen").command.hello()|print("Hello, I am Hanzen!")|
-|HanzenReverse|require("hanzen").command.reverse_text()| Rewrite text reversed |
-|HanzenKatakanaF2H|require("hanzen").command.katakana.full_to_half()| Selected text full to half only katakana|
-|HanzenKatakanaH2F|require("hanzen").command.katakana.half_to_full()| Selected text half to full only katakana|
+|ExCommand|command|description|options|
+|:- |:- |:-:|:-:|
+|HanzenInfo|require("hanzen").command.hello()|print("Hello, I am Hanzen!")||
+|HanzenReverse|require("hanzen").command.reverse_text()| Rewrite text reversed ||
+|HanzenFullToHalf|require("hanzen").command.full_to_half(option)| Selected text full to half|['hiragana','katakana','alphabet', 'number', 'all']|
+|HanzenHalfToFull|require("hanzen").command.half_to_full(option)| Selected text half to full|['hiragana','katakana','alphabet', 'number', 'all']|
+|HanzenFullToHalfBuffer|require("hanzen").command.full_to_half_buffer()| Selected buffer full to half||
+|HanzenHalfToFullBuffer|require("hanzen").command.half_to_full_buffer()| Selected buffer half to full||
 <!-- markdownlint-enable MD013 -->
 
 ## About
@@ -42,6 +44,7 @@ And, "half width charactor" called "Hankaku Moji", "半角文字".
 
 ## Roadmap
 
-- number
-- alphabet
+- support number
+- support alphabet
+- support Korean alphabet, Hangul characters
 - support whole line selection
