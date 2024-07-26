@@ -2,6 +2,8 @@
 
 This is Rewriter of between Full width charactor and Half width charactor.
 
+Only UTF8 support.
+
 👷 🚧 WIP 🚧 👷
 
 ***This Project is work in progress yet.***
